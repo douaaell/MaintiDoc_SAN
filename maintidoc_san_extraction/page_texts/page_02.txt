@@ -1,0 +1,50 @@
+1. Presentation et perimetre
+
+ Le SAN-LAB 2000 est une baie de stockage fictive a deux controleurs (A et B). Deux fabrics Fibre Channel
+
+ independantes relient les hotes aux ports de la baie. Le stockage est expose sous forme de volumes
+
+ logiques (LUN).
+
+
+  Champ                          Valeur pedagogique
+
+
+   Equipement                  SAN-LAB 2000 (fictif)
+
+
+   Controleurs                 A et B, haute disponibilite conceptuelle
+
+
+   Connectivite                  2 fabrics FC A/B ; zoning et LUN masking
+
+
+   Protection donnees             Groupe de disques protege ; details RAID non specifies
+
+
+   Supervision                       Etat controleurs, disques, ports, chemins et capacite
+
+
+   Exclusions                   Aucune instruction de remplacement a chaud ni modification de zoning en production
+
+
+
+ Regles prealables
+
+ Verifier l’identifiant de baie, les numeros de serie, la version du micrologiciel, les autorisations d’acces et
+
+ l’existence d’une sauvegarde / politique de protection avant toute action modifiant l’environnement.
+
+
+
+
+
+ FIG-01 : schema logique. Les lignes illustrent des chemins de communication et non un cablage
+
+ constructeur reel.
+
+
+
+
+
+SAN-MAN-001  | MaintiDoc  | Manuel pedagogique fictif                                                             Page 2

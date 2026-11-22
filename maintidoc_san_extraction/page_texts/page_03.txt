@@ -1,0 +1,43 @@
+2. Reseau Fibre Channel et multipathing
+
+
+
+
+
+ FIG-02 : deux chemins independants entre les HBA des hotes, les fabrics et les ports de controleur.
+
+
+  Terme                        Definition / verification
+
+
+  HBA                       Carte de connexion FC cote hote ; etat du port et WWPN
+
+
+  WWPN                         Identifiant de port Fibre Channel ; correspondance inventaire
+
+
+   Zoning                    Regles de visibilite des ports dans une fabric
+
+
+  LUN masking                Autorisation d’acces aux volumes par les initiateurs
+
+
+  MPIO                      Gestion des chemins multiples et basculement selon configuration
+
+
+
+ Controle non intrusif - perte de chemin
+
+ 1. Identifier le serveur et le volume affecte. 2. Consulter les journaux et l’etat des chemins sur l’hote. 3.
+
+ Verifier l’etat des ports FC et des deux switches. 4. Comparer les WWPN et le zoning aux configurations
+
+ approuvees. 5. Ne rien modifier avant validation de l’equipe stockage/reseau.
+
+ Reference de diagnostic : DIAG-FC-01, figure FIG-02.
+
+
+
+
+
+SAN-MAN-001  | MaintiDoc  | Manuel pedagogique fictif                                                             Page 3

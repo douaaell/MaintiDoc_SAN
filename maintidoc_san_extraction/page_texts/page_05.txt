@@ -1,0 +1,45 @@
+4. Voyants, evenements et interpretation
+
+
+
+
+
+ FIG-04 : signification uniquement conventionnelle dans le simulateur SAN-LAB 2000 ; ne pas extrapoler a
+
+ un SAN reel.
+
+
+  Code          Etat           Signification pour le simulateur           Reponse documentaire
+
+
+   AL-01        Orange     Chemin FC degrade                            Verifier DIAG-FC-01 et FIG-02
+
+
+   AL-02        Orange      Disque en pre-alerte                       Consulter FIG-03 et DISC-02
+
+
+   AL-03        Rouge      Volume indisponible                      Escalade prioritaire au responsable SAN
+
+
+   AL-04        Orange      Capacite libre faible                        Consulter tendances et politique capacite
+
+
+   AL-00         Vert          Etat nominal declare                   Aucune action preventive imposee
+
+
+
+ Interpretation d une photographie
+
+ Exemple de question : « Le voyant orange est allume : quelle est la cause ? » Une photographie du voyant
+
+ ne suffit PAS a identifier la cause. MaintiDoc doit demander le code d’alarme, le modele et le contexte du
+
+ panneau, puis confronter ces elements aux documents autorises.
+
+ Reference : ALARM-TAB-01 et FIG-04.
+
+
+
+
+
+SAN-MAN-001  | MaintiDoc  | Manuel pedagogique fictif                                                             Page 5

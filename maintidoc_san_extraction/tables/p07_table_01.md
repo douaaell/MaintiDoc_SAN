@@ -1,0 +1,11 @@
+| col_1   | col_2    | col_3          | col_4                                       |
+|:--------|:---------|:---------------|:--------------------------------------------|
+| Ticket  | Date     | Actif          | Observation/suite                           |
+| INC104  | 20260918 | FabricA        | PertetemporairedecheminHBA1;surveillance    |
+| -       | - -      |                |                                             |
+| INC117  | 20261002 | DisqueB03      | Pre-alerte ; examen du groupe de protection |
+| -       | - -      |                |                                             |
+| INC125  | 20261020 | Volume VOL -DB | Capacitea88%;analysedetendance              |
+| -       | - -      |                |                                             |
+| INC130  | 20261025 | ControleurB    | Evenementnonreproductible;suivi             |
+| -       | - -      |                |                                             |

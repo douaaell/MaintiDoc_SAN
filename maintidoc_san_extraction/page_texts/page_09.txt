@@ -1,0 +1,57 @@
+8. Annexes - index des elements
+
+
+   Reference                     Type             Contenu
+
+
+   FIG-01                      Schema            Architecture logique
+
+
+   FIG-02                      Schema            Fibre Channel et MPIO
+
+
+   FIG-03                      Schema            Controleurs et disques
+
+
+   FIG-04                      Schema           Voyants du simulateur
+
+
+   FIG-05                      Schema           Workflow maintenance
+
+
+  ALARM-TAB-01                  Tableau          Codes d alarmes
+
+
+   DIAG-FC-01                      Procedure          Perte de chemin FC
+
+
+   DISC-02                         Procedure           Pre-alerte disque
+
+
+  PROC-SAN-01                    Procedure         Gestion documentaire d alerte
+
+
+   INC-104 a INC-130                 Historique          Interventions fictives
+
+
+ Conseils d'indexation - Projet integrateur
+
+ Pour chaque schema, conserver : document_id=SAN-MAN-001, revision=1.0, figure_id, numero de page,
+
+ description, emplacement de l’image originale et groupes d’acces. Indexer les tableaux ligne par ligne et
+
+ conserver une representation structuree. Verifier que les citations soutiennent les reponses generees.
+
+ Limites du corpus
+
+ Tous les identifiants, alarmes, composants et incidents de ce manuel sont fictifs. La symbolique ne
+
+ correspond a aucun modele constructeur garanti. Les capacites de diagnostic du RAG et du VLM doivent
+
+ etre evaluees sur les reponses de reference, sans assimiler similarite visuelle et certitude technique.
+
+
+
+
+
+SAN-MAN-001  | MaintiDoc  | Manuel pedagogique fictif                                                             Page 9

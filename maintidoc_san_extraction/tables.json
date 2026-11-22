@@ -1,0 +1,444 @@
+[
+  {
+    "document_id": "SAN-MAN-001",
+    "page": 2,
+    "element_id": "p02_table_01",
+    "modality": "table",
+    "bbox": [
+      55.0,
+      136.0,
+      546.0,
+      311.0
+    ],
+    "rows": [
+      [
+        "Champ",
+        "Valeurpedagogique"
+      ],
+      [
+        "Equipement",
+        "SAN -LAB 2000 (fictif)"
+      ],
+      [
+        "Controleurs",
+        "AetB hautedisponibiliteconceptuelle\n,"
+      ],
+      [
+        "Connectivite",
+        "2fabricsFCA/B;zoningetLUNmasking"
+      ],
+      [
+        "Protectiondonnees",
+        "Groupededisquesprotege;detailsRAIDnonspecifies"
+      ],
+      [
+        "Supervision",
+        "Etatcontroleurs disques ports cheminsetcapacite\n, , ,"
+      ],
+      [
+        "Exclusions",
+        "Aucuneinstructionderemplacementachaudnimodificationdezoningenproduction"
+      ]
+    ],
+    "text": "| col_1             | col_2                                                                   |\n|:------------------|:------------------------------------------------------------------------|\n| Champ             | Valeurpedagogique                                                       |\n| Equipement        | SAN -LAB 2000 (fictif)                                                  |\n| Controleurs       | AetB hautedisponibiliteconceptuelle                                     |\n|                   | ,                                                                       |\n| Connectivite      | 2fabricsFCA/B;zoningetLUNmasking                                        |\n| Protectiondonnees | Groupededisquesprotege;detailsRAIDnonspecifies                          |\n| Supervision       | Etatcontroleurs disques ports cheminsetcapacite                         |\n|                   | , , ,                                                                   |\n| Exclusions        | Aucuneinstructionderemplacementachaudnimodificationdezoningenproduction |"
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "page": 3,
+    "element_id": "p03_table_01",
+    "modality": "table",
+    "bbox": [
+      55.0,
+      331.0,
+      546.0,
+      481.0
+    ],
+    "rows": [
+      [
+        "Terme",
+        "Definition/verification"
+      ],
+      [
+        "HBA",
+        "CartedeconnexionFCcotehote;etatduportetWWPN"
+      ],
+      [
+        "WWPN",
+        "IdentifiantdeportFibreChannel;correspondanceinventaire"
+      ],
+      [
+        "Zoning",
+        "Reglesdevisibilitedesportsdansunefabric"
+      ],
+      [
+        "LUNmasking",
+        "Autorisationd’accesauxvolumesparlesinitiateurs"
+      ],
+      [
+        "MPIO",
+        "Gestiondescheminsmultiplesetbasculementselonconfiguration"
+      ]
+    ],
+    "text": "| col_1      | col_2                                                     |\n|:-----------|:----------------------------------------------------------|\n| Terme      | Definition/verification                                   |\n| HBA        | CartedeconnexionFCcotehote;etatduportetWWPN               |\n| WWPN       | IdentifiantdeportFibreChannel;correspondanceinventaire    |\n| Zoning     | Reglesdevisibilitedesportsdansunefabric                   |\n| LUNmasking | Autorisationd’accesauxvolumesparlesinitiateurs            |\n| MPIO       | Gestiondescheminsmultiplesetbasculementselonconfiguration |"
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "page": 4,
+    "element_id": "p04_table_01",
+    "modality": "table",
+    "bbox": [
+      55.0,
+      345.0,
+      546.0,
+      470.0
+    ],
+    "rows": [
+      [
+        "Element",
+        "Symptomepossible",
+        "Verificationdocumentaire"
+      ],
+      [
+        "ControleurA/B",
+        "Degradeouindisponible",
+        "Statut journaux etatHA\n, ,"
+      ],
+      [
+        "Enceinte",
+        "Pertedeliaison",
+        "Inventaireetalertesdeconnexion"
+      ],
+      [
+        "DisqueBxx",
+        "Defaut ou pre-alerte",
+        "IDexact groupe reconstruction\n, ,"
+      ],
+      [
+        "VolumeLUN",
+        "Saturation/latence",
+        "Capacite IOPS latence alertes\n, , ,"
+      ]
+    ],
+    "text": "| col_1         | col_2                 | col_3                          |\n|:--------------|:----------------------|:-------------------------------|\n| Element       | Symptomepossible      | Verificationdocumentaire       |\n| ControleurA/B | Degradeouindisponible | Statut journaux etatHA         |\n|               |                       | , ,                            |\n| Enceinte      | Pertedeliaison        | Inventaireetalertesdeconnexion |\n| DisqueBxx     | Defaut ou pre-alerte  | IDexact groupe reconstruction  |\n|               |                       | , ,                            |\n| VolumeLUN     | Saturation/latence    | Capacite IOPS latence alertes  |\n|               |                       | , , ,                          |"
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "page": 5,
+    "element_id": "p05_table_01",
+    "modality": "table",
+    "bbox": [
+      55.0,
+      345.0,
+      546.0,
+      495.0
+    ],
+    "rows": [
+      [
+        "Code",
+        "Etat",
+        "Significationpourlesimulateur",
+        "Reponsedocumentaire"
+      ],
+      [
+        "AL01\n-",
+        "Orange",
+        "CheminFCdegrade",
+        "Verifier DIAG -FC -01 et FIG -02"
+      ],
+      [
+        "AL02\n-",
+        "Orange",
+        "Disque en pre-alerte",
+        "Consulter FIG -03 et DISC -02"
+      ],
+      [
+        "AL03\n-",
+        "Rouge",
+        "Volumeindisponible",
+        "EscaladeprioritaireauresponsableSAN"
+      ],
+      [
+        "AL04\n-",
+        "Orange",
+        "Capacitelibrefaible",
+        "Consultertendancesetpolitiquecapacite"
+      ],
+      [
+        "AL00\n-",
+        "Vert",
+        "Etatnominaldeclare",
+        "Aucuneactionpreventiveimposee"
+      ]
+    ],
+    "text": "| col_1   | col_2   | col_3                         | col_4                                 |\n|:--------|:--------|:------------------------------|:--------------------------------------|\n| Code    | Etat    | Significationpourlesimulateur | Reponsedocumentaire                   |\n| AL01    | Orange  | CheminFCdegrade               | Verifier DIAG -FC -01 et FIG -02      |\n| -       |         |                               |                                       |\n| AL02    | Orange  | Disque en pre-alerte          | Consulter FIG -03 et DISC -02         |\n| -       |         |                               |                                       |\n| AL03    | Rouge   | Volumeindisponible            | EscaladeprioritaireauresponsableSAN   |\n| -       |         |                               |                                       |\n| AL04    | Orange  | Capacitelibrefaible           | Consultertendancesetpolitiquecapacite |\n| -       |         |                               |                                       |\n| AL00    | Vert    | Etatnominaldeclare            | Aucuneactionpreventiveimposee         |\n| -       |         |                               |                                       |"
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "page": 6,
+    "element_id": "p06_table_01",
+    "modality": "table",
+    "bbox": [
+      55.0,
+      499.0,
+      546.0,
+      624.0
+    ],
+    "rows": [
+      [
+        "Operation",
+        "AutorisationdansMaintiDoc"
+      ],
+      [
+        "Liredocumentationetjournauxautorises",
+        "Oui aveccontroled’acces\n,"
+      ],
+      [
+        "Preparerunticket",
+        "Oui sousformedebrouillon\n,"
+      ],
+      [
+        "Creerunticket",
+        "Seulementapresapprobationhumaine"
+      ],
+      [
+        "Modifierzoning/supprimerLUN/failover",
+        "Non:horsperimetre"
+      ]
+    ],
+    "text": "| col_1                                | col_2                            |\n|:-------------------------------------|:---------------------------------|\n| Operation                            | AutorisationdansMaintiDoc        |\n| Liredocumentationetjournauxautorises | Oui aveccontroled’acces          |\n|                                      | ,                                |\n| Preparerunticket                     | Oui sousformedebrouillon         |\n|                                      | ,                                |\n| Creerunticket                        | Seulementapresapprobationhumaine |\n| Modifierzoning/supprimerLUN/failover | Non:horsperimetre                |"
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "page": 7,
+    "element_id": "p07_table_01",
+    "modality": "table",
+    "bbox": [
+      55.0,
+      87.0,
+      546.0,
+      212.0
+    ],
+    "rows": [
+      [
+        "Ticket",
+        "Date",
+        "Actif",
+        "Observation/suite"
+      ],
+      [
+        "INC104\n-",
+        "20260918\n- -",
+        "FabricA",
+        "PertetemporairedecheminHBA1;surveillance"
+      ],
+      [
+        "INC117\n-",
+        "20261002\n- -",
+        "DisqueB03",
+        "Pre-alerte ; examen du groupe de protection"
+      ],
+      [
+        "INC125\n-",
+        "20261020\n- -",
+        "Volume VOL -DB",
+        "Capacitea88%;analysedetendance"
+      ],
+      [
+        "INC130\n-",
+        "20261025\n- -",
+        "ControleurB",
+        "Evenementnonreproductible;suivi"
+      ]
+    ],
+    "text": "| col_1   | col_2    | col_3          | col_4                                       |\n|:--------|:---------|:---------------|:--------------------------------------------|\n| Ticket  | Date     | Actif          | Observation/suite                           |\n| INC104  | 20260918 | FabricA        | PertetemporairedecheminHBA1;surveillance    |\n| -       | - -      |                |                                             |\n| INC117  | 20261002 | DisqueB03      | Pre-alerte ; examen du groupe de protection |\n| -       | - -      |                |                                             |\n| INC125  | 20261020 | Volume VOL -DB | Capacitea88%;analysedetendance              |\n| -       | - -      |                |                                             |\n| INC130  | 20261025 | ControleurB    | Evenementnonreproductible;suivi             |\n| -       | - -      |                |                                             |"
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "page": 7,
+    "element_id": "p07_table_02",
+    "modality": "table",
+    "bbox": [
+      55.0,
+      454.0,
+      546.0,
+      779.0
+    ],
+    "rows": [
+      [
+        "ID",
+        "Question",
+        "Sourceattendue"
+      ],
+      [
+        "Q01",
+        "Quelestleroledesdeuxfabrics?",
+        "FIG01 FIG02\n- , -"
+      ],
+      [
+        "Q02",
+        "Ouintervientlezoning?",
+        "FIG02\n-"
+      ],
+      [
+        "Q03",
+        "QuesignifieMPIO?",
+        "Section2"
+      ],
+      [
+        "Q04",
+        "Le disque B03 a-t -il un antecedent ?",
+        "INC117 FIG03\n- , -"
+      ],
+      [
+        "Q05",
+        "Quel est le sens de AL -01 ?",
+        "ALARMTAB01\n- -"
+      ],
+      [
+        "Q06",
+        "Le voyant orange permet -il un diagnostic certain ?",
+        "Section4"
+      ],
+      [
+        "Q07",
+        "Que faut -il verifier avant un ticket ?",
+        "PROCSAN01\n- -"
+      ],
+      [
+        "Q08",
+        "Quidoitapprouverlacreationduticket?",
+        "Section5"
+      ],
+      [
+        "Q09",
+        "Quelleprocedurecorrespondaunepertedechemin?",
+        "DIAGFC01\n- -"
+      ],
+      [
+        "Q10",
+        "Peut -on declencher un failover depuis MaintiDoc ?",
+        "Section5"
+      ],
+      [
+        "Q11",
+        "Quellealertetouchelacapacite?",
+        "AL04\n-"
+      ],
+      [
+        "Q12",
+        "Quels elements retrouve-t -on dans le ticket exemple ?",
+        "Section6"
+      ]
+    ],
+    "text": "| col_1   | col_2                                                  | col_3          |\n|:--------|:-------------------------------------------------------|:---------------|\n| ID      | Question                                               | Sourceattendue |\n| Q01     | Quelestleroledesdeuxfabrics?                           | FIG01 FIG02    |\n|         |                                                        | - , -          |\n| Q02     | Ouintervientlezoning?                                  | FIG02          |\n|         |                                                        | -              |\n| Q03     | QuesignifieMPIO?                                       | Section2       |\n| Q04     | Le disque B03 a-t -il un antecedent ?                  | INC117 FIG03   |\n|         |                                                        | - , -          |\n| Q05     | Quel est le sens de AL -01 ?                           | ALARMTAB01     |\n|         |                                                        | - -            |\n| Q06     | Le voyant orange permet -il un diagnostic certain ?    | Section4       |\n| Q07     | Que faut -il verifier avant un ticket ?                | PROCSAN01      |\n|         |                                                        | - -            |\n| Q08     | Quidoitapprouverlacreationduticket?                    | Section5       |\n| Q09     | Quelleprocedurecorrespondaunepertedechemin?            | DIAGFC01       |\n|         |                                                        | - -            |\n| Q10     | Peut -on declencher un failover depuis MaintiDoc ?     | Section5       |\n| Q11     | Quellealertetouchelacapacite?                          | AL04           |\n|         |                                                        | -              |\n| Q12     | Quels elements retrouve-t -on dans le ticket exemple ? | Section6       |"
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "page": 7,
+    "element_id": "p07_table_03",
+    "modality": "table",
+    "bbox": [
+      61.0,
+      259.8738098144531,
+      387.80322265625,
+      392.4224548339844
+    ],
+    "rows": [
+      [
+        "Champ",
+        "Exemple"
+      ],
+      [
+        "EquipmentID",
+        "SANLAB2000\n- -"
+      ],
+      [
+        "Titre",
+        "Alerte AL -01 sur fabric A"
+      ],
+      [
+        "Description",
+        "CheminFCdegradesurHBA1 recurrenceaverifier\n,"
+      ],
+      [
+        "Preuves",
+        "ALARMTAB01 FIG02 INC104\n- - , - , -"
+      ],
+      [
+        "Statut",
+        "Brouillon approbation requise\n-"
+      ]
+    ],
+    "text": "| col_1       | col_2                                      |\n|:------------|:-------------------------------------------|\n| Champ       | Exemple                                    |\n| EquipmentID | SANLAB2000                                 |\n|             | - -                                        |\n| Titre       | Alerte AL -01 sur fabric A                 |\n| Description | CheminFCdegradesurHBA1 recurrenceaverifier |\n|             | ,                                          |\n| Preuves     | ALARMTAB01 FIG02 INC104                    |\n|             | - - , - , -                                |\n| Statut      | Brouillon approbation requise              |\n|             | -                                          |"
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "page": 9,
+    "element_id": "p09_table_01",
+    "modality": "table",
+    "bbox": [
+      54.75,
+      87.0,
+      546.0,
+      362.0
+    ],
+    "rows": [
+      [
+        "Reference",
+        "Type",
+        "Contenu"
+      ],
+      [
+        "FIG01\n-",
+        "Schema",
+        "Architecturelogique"
+      ],
+      [
+        "FIG02\n-",
+        "Schema",
+        "FibreChanneletMPIO"
+      ],
+      [
+        "FIG03\n-",
+        "Schema",
+        "Controleursetdisques"
+      ],
+      [
+        "FIG04\n-",
+        "Schema",
+        "Voyantsdusimulateur"
+      ],
+      [
+        "FIG05\n-",
+        "Schema",
+        "Workflowmaintenance"
+      ],
+      [
+        "ALARMTAB01\n- -",
+        "Tableau",
+        "Codesdalarmes"
+      ],
+      [
+        "DIAGFC01\n- -",
+        "Procedure",
+        "PertedecheminFC"
+      ],
+      [
+        "DISC02\n-",
+        "Procedure",
+        "Pre-alerte disque"
+      ],
+      [
+        "PROCSAN01\n- -",
+        "Procedure",
+        "Gestiondocumentairedalerte"
+      ],
+      [
+        "INC -104 a INC -130",
+        "Historique",
+        "Interventionsfictives"
+      ]
+    ],
+    "text": "| col_1               | col_2      | col_3                      |\n|:--------------------|:-----------|:---------------------------|\n| Reference           | Type       | Contenu                    |\n| FIG01               | Schema     | Architecturelogique        |\n| -                   |            |                            |\n| FIG02               | Schema     | FibreChanneletMPIO         |\n| -                   |            |                            |\n| FIG03               | Schema     | Controleursetdisques       |\n| -                   |            |                            |\n| FIG04               | Schema     | Voyantsdusimulateur        |\n| -                   |            |                            |\n| FIG05               | Schema     | Workflowmaintenance        |\n| -                   |            |                            |\n| ALARMTAB01          | Tableau    | Codesdalarmes              |\n| - -                 |            |                            |\n| DIAGFC01            | Procedure  | PertedecheminFC            |\n| - -                 |            |                            |\n| DISC02              | Procedure  | Pre-alerte disque          |\n| -                   |            |                            |\n| PROCSAN01           | Procedure  | Gestiondocumentairedalerte |\n| - -                 |            |                            |\n| INC -104 a INC -130 | Historique | Interventionsfictives      |"
+  }
+]

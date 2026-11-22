@@ -1,0 +1,116 @@
+[
+  {
+    "document_id": "SAN-MAN-001",
+    "document_sha256": "caec09fa5cadf68924ac1c75194498aaa9329d8c5e5cf1071939b3b50002b3f9",
+    "page": 1,
+    "element_id": "p01_image_01",
+    "figure_id": null,
+    "modality": "illustration",
+    "image_path": "maintidoc_san_extraction\\images\\p01_image_01.png",
+    "image_sha256": "6189d4b48f4042123d8e8b45bbe8265c2ec44684fbf69995740c22fdc0b1dace",
+    "rectangles": [
+      [
+        43.0,
+        238.0,
+        552.280029296875,
+        536.0
+      ]
+    ],
+    "xref": 45
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "document_sha256": "caec09fa5cadf68924ac1c75194498aaa9329d8c5e5cf1071939b3b50002b3f9",
+    "page": 2,
+    "element_id": "p02_image_01",
+    "figure_id": "FIG-01",
+    "modality": "schema",
+    "image_path": "maintidoc_san_extraction\\images\\p02_image_01.png",
+    "image_sha256": "9368b67741c406e9f714fd126a25b7c0db0aa1d793196665de703953d5f5304c",
+    "rectangles": [
+      [
+        52.63999938964844,
+        385.0,
+        542.6400146484375,
+        600.0
+      ]
+    ],
+    "xref": 4
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "document_sha256": "caec09fa5cadf68924ac1c75194498aaa9329d8c5e5cf1071939b3b50002b3f9",
+    "page": 3,
+    "element_id": "p03_image_01",
+    "figure_id": "FIG-02",
+    "modality": "schema",
+    "image_path": "maintidoc_san_extraction\\images\\p03_image_01.png",
+    "image_sha256": "445eceb37f21d09033caa8774be02e5069e84d15efb068ec3652df592a002ed8",
+    "rectangles": [
+      [
+        52.63999938964844,
+        87.0,
+        542.6400146484375,
+        302.0
+      ]
+    ],
+    "xref": 6
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "document_sha256": "caec09fa5cadf68924ac1c75194498aaa9329d8c5e5cf1071939b3b50002b3f9",
+    "page": 4,
+    "element_id": "p04_image_01",
+    "figure_id": "FIG-03",
+    "modality": "schema",
+    "image_path": "maintidoc_san_extraction\\images\\p04_image_01.png",
+    "image_sha256": "d4f40101495f03a1bf7d2d29bbe7ffa5dcbf859baf039737ae007f3a77f52c61",
+    "rectangles": [
+      [
+        52.63999938964844,
+        87.0,
+        542.6400146484375,
+        302.0
+      ]
+    ],
+    "xref": 8
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "document_sha256": "caec09fa5cadf68924ac1c75194498aaa9329d8c5e5cf1071939b3b50002b3f9",
+    "page": 5,
+    "element_id": "p05_image_01",
+    "figure_id": "FIG-04",
+    "modality": "schema",
+    "image_path": "maintidoc_san_extraction\\images\\p05_image_01.png",
+    "image_sha256": "68f16345794bdb63ccbd8633a565da2d365363ca9e15ed24465893a7ba45620a",
+    "rectangles": [
+      [
+        52.63999938964844,
+        87.0,
+        542.6400146484375,
+        302.0
+      ]
+    ],
+    "xref": 10
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "document_sha256": "caec09fa5cadf68924ac1c75194498aaa9329d8c5e5cf1071939b3b50002b3f9",
+    "page": 6,
+    "element_id": "p06_image_01",
+    "figure_id": "FIG-05",
+    "modality": "schema",
+    "image_path": "maintidoc_san_extraction\\images\\p06_image_01.png",
+    "image_sha256": "7464dc3d28215ae3356fe2b95c11dca8f55ce08fda6e859e7b255d0505f8fd10",
+    "rectangles": [
+      [
+        52.63999938964844,
+        87.0,
+        542.6400146484375,
+        302.0
+      ]
+    ],
+    "xref": 12
+  }
+]

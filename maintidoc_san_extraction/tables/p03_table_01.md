@@ -1,0 +1,8 @@
+| col_1      | col_2                                                     |
+|:-----------|:----------------------------------------------------------|
+| Terme      | Definition/verification                                   |
+| HBA        | CartedeconnexionFCcotehote;etatduportetWWPN               |
+| WWPN       | IdentifiantdeportFibreChannel;correspondanceinventaire    |
+| Zoning     | Reglesdevisibilitedesportsdansunefabric                   |
+| LUNmasking | Autorisationd’accesauxvolumesparlesinitiateurs            |
+| MPIO       | Gestiondescheminsmultiplesetbasculementselonconfiguration |

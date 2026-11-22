@@ -1,0 +1,86 @@
+6. Historique fictif d interventions
+
+
+   Ticket           Date                Actif                 Observation / suite
+
+
+   INC-104         2026-09-18       Fabric A               Perte temporaire de chemin HBA1 ; surveillance
+
+
+   INC-117         2026-10-02       Disque B03            Pre-alerte ; examen du groupe de protection
+
+
+   INC-125         2026-10-20      Volume VOL-DB       Capacite a 88 % ; analyse de tendance
+
+
+   INC-130         2026-10-25       Controleur B         Evenement non reproductible ; suivi
+
+
+
+ Exemple de ticket a preparer
+
+
+  Champ                    Exemple
+
+
+   Equipment ID               SAN-LAB-2000
+
+
+   Titre                            Alerte AL-01 sur fabric A
+
+
+   Description                Chemin FC degrade sur HBA1, recurrence a verifier
+
+
+   Preuves                    ALARM-TAB-01, FIG-02, INC-104
+
+
+   Statut                           Brouillon - approbation requise
+
+
+ 7. Jeu de questions pour le RAG multimodal
+
+
+   ID        Question                                                                   Source attendue
+
+
+  Q01      Quel est le role des deux fabrics ?                                                   FIG-01, FIG-02
+
+
+  Q02     Ou intervient le zoning ?                                                         FIG-02
+
+
+  Q03     Que signifie MPIO ?                                                               Section 2
+
+
+  Q04      Le disque B03 a-t-il un antecedent ?                                               INC-117, FIG-03
+
+
+  Q05      Quel est le sens de AL-01 ?                                                ALARM-TAB-01
+
+
+  Q06      Le voyant orange permet-il un diagnostic certain ?                                  Section 4
+
+
+  Q07     Que faut-il verifier avant un ticket ?                                         PROC-SAN-01
+
+
+  Q08      Qui doit approuver la creation du ticket ?                                           Section 5
+
+
+  Q09      Quelle procedure correspond a une perte de chemin ?                            DIAG-FC-01
+
+
+  Q10      Peut-on declencher un failover depuis MaintiDoc ?                                  Section 5
+
+
+  Q11      Quelle alerte touche la capacite ?                                              AL-04
+
+
+  Q12      Quels elements retrouve-t-on dans le ticket exemple ?                              Section 6
+
+
+
+
+
+SAN-MAN-001  | MaintiDoc  | Manuel pedagogique fictif                                                             Page 7

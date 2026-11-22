@@ -1,0 +1,74 @@
+[
+  {
+    "document_id": "SAN-MAN-001",
+    "document_sha256": "caec09fa5cadf68924ac1c75194498aaa9329d8c5e5cf1071939b3b50002b3f9",
+    "page": 1,
+    "element_id": "page_01_text",
+    "modality": "text",
+    "text": "MAINTiDOC  / SAN-LAB 2000\n\nMANUEL DE MAINTENANCE\nD·UN SYSTEME SAN\nPROJET INTEGRATEUR\n\nIntelligence artificielle generative multimodale et agentique\n\n\n\n\n\nArchitecture SAN  | Fibre Channel  | Controleurs et disques\nAlarmes  | Diagnostic documentaire  | Validation humaine\n\n\n\nDocument pedagogique fictif - SAN-LAB 2000\n5 schemas integres, tableaux, procedures et cas d·interventions\nCorpus de demonstration pour le Projet integrateur MaintiDoc\n\n\n\n\n  AVERTISSEMENT\n\n  Manuel fictif : ne remplace pas la notice officielle du constructeur.\n\n\n\nSAN-MAN-001   |  Revision 1.1   |  Octobre 2026"
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "document_sha256": "caec09fa5cadf68924ac1c75194498aaa9329d8c5e5cf1071939b3b50002b3f9",
+    "page": 2,
+    "element_id": "page_02_text",
+    "modality": "text",
+    "text": "1. Presentation et perimetre\n\n Le SAN-LAB 2000 est une baie de stockage fictive a deux controleurs (A et B). Deux fabrics Fibre Channel\n\n independantes relient les hotes aux ports de la baie. Le stockage est expose sous forme de volumes\n\n logiques (LUN).\n\n\n  Champ                          Valeur pedagogique\n\n\n   Equipement                  SAN-LAB 2000 (fictif)\n\n\n   Controleurs                 A et B, haute disponibilite conceptuelle\n\n\n   Connectivite                  2 fabrics FC A/B ; zoning et LUN masking\n\n\n   Protection donnees             Groupe de disques protege ; details RAID non specifies\n\n\n   Supervision                       Etat controleurs, disques, ports, chemins et capacite\n\n\n   Exclusions                   Aucune instruction de remplacement a chaud ni modification de zoning en production\n\n\n\n Regles prealables\n\n Verifier l’identifiant de baie, les numeros de serie, la version du micrologiciel, les autorisations d’acces et\n\n l’existence d’une sauvegarde / politique de protection avant toute action modifiant l’environnement.\n\n\n\n\n\n FIG-01 : schema logique. Les lignes illustrent des chemins de communication et non un cablage\n\n constructeur reel.\n\n\n\n\n\nSAN-MAN-001  | MaintiDoc  | Manuel pedagogique fictif                                                             Page 2"
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "document_sha256": "caec09fa5cadf68924ac1c75194498aaa9329d8c5e5cf1071939b3b50002b3f9",
+    "page": 3,
+    "element_id": "page_03_text",
+    "modality": "text",
+    "text": "2. Reseau Fibre Channel et multipathing\n\n\n\n\n\n FIG-02 : deux chemins independants entre les HBA des hotes, les fabrics et les ports de controleur.\n\n\n  Terme                        Definition / verification\n\n\n  HBA                       Carte de connexion FC cote hote ; etat du port et WWPN\n\n\n  WWPN                         Identifiant de port Fibre Channel ; correspondance inventaire\n\n\n   Zoning                    Regles de visibilite des ports dans une fabric\n\n\n  LUN masking                Autorisation d’acces aux volumes par les initiateurs\n\n\n  MPIO                      Gestion des chemins multiples et basculement selon configuration\n\n\n\n Controle non intrusif - perte de chemin\n\n 1. Identifier le serveur et le volume affecte. 2. Consulter les journaux et l’etat des chemins sur l’hote. 3.\n\n Verifier l’etat des ports FC et des deux switches. 4. Comparer les WWPN et le zoning aux configurations\n\n approuvees. 5. Ne rien modifier avant validation de l’equipe stockage/reseau.\n\n Reference de diagnostic : DIAG-FC-01, figure FIG-02.\n\n\n\n\n\nSAN-MAN-001  | MaintiDoc  | Manuel pedagogique fictif                                                             Page 3"
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "document_sha256": "caec09fa5cadf68924ac1c75194498aaa9329d8c5e5cf1071939b3b50002b3f9",
+    "page": 4,
+    "element_id": "page_04_text",
+    "modality": "text",
+    "text": "3. Controleurs, disques et capacite\n\n\n\n\n\n FIG-03 : vue didactique des chemins entre controleurs et enceinte disques. Aucun type de protection RAID\n\n n’est prescrit.\n\n\n   Element              Symptome possible              Verification documentaire\n\n\n   Controleur A/B          Degrade ou indisponible        Statut, journaux, etat HA\n\n\n   Enceinte                 Perte de liaison                 Inventaire et alertes de connexion\n\n\n   Disque Bxx              Defaut ou pre-alerte           ID exact, groupe, reconstruction\n\n\n  Volume LUN              Saturation / latence            Capacite, IOPS, latence, alertes\n\n\n\n Cas DISC-02 : disque en pre-alerte\n\n Consulter l’identifiant physique et l’horodatage de l’alerte. Examiner l’etat du groupe de protection et la\n\n presence d’une reconstruction en cours. Preparer un ticket avec preuves, sans lancer automatiquement de\n\n remplacement ni de reconstruction.\n\n Attention : une LED disque seule n’identifie pas le risque : les significations dependent du modele et du\n\n firmware.\n\n\n\n\n\nSAN-MAN-001  | MaintiDoc  | Manuel pedagogique fictif                                                             Page 4"
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "document_sha256": "caec09fa5cadf68924ac1c75194498aaa9329d8c5e5cf1071939b3b50002b3f9",
+    "page": 5,
+    "element_id": "page_05_text",
+    "modality": "text",
+    "text": "4. Voyants, evenements et interpretation\n\n\n\n\n\n FIG-04 : signification uniquement conventionnelle dans le simulateur SAN-LAB 2000 ; ne pas extrapoler a\n\n un SAN reel.\n\n\n  Code          Etat           Signification pour le simulateur           Reponse documentaire\n\n\n   AL-01        Orange     Chemin FC degrade                            Verifier DIAG-FC-01 et FIG-02\n\n\n   AL-02        Orange      Disque en pre-alerte                       Consulter FIG-03 et DISC-02\n\n\n   AL-03        Rouge      Volume indisponible                      Escalade prioritaire au responsable SAN\n\n\n   AL-04        Orange      Capacite libre faible                        Consulter tendances et politique capacite\n\n\n   AL-00         Vert          Etat nominal declare                   Aucune action preventive imposee\n\n\n\n Interpretation d une photographie\n\n Exemple de question : « Le voyant orange est allume : quelle est la cause ? » Une photographie du voyant\n\n ne suffit PAS a identifier la cause. MaintiDoc doit demander le code d’alarme, le modele et le contexte du\n\n panneau, puis confronter ces elements aux documents autorises.\n\n Reference : ALARM-TAB-01 et FIG-04.\n\n\n\n\n\nSAN-MAN-001  | MaintiDoc  | Manuel pedagogique fictif                                                             Page 5"
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "document_sha256": "caec09fa5cadf68924ac1c75194498aaa9329d8c5e5cf1071939b3b50002b3f9",
+    "page": 6,
+    "element_id": "page_06_text",
+    "modality": "text",
+    "text": "5. Workflow de maintenance et securite\n\n\n\n\n\n FIG-05 : circuit documentaire de traitement d’une alerte. La validation humaine precede toute action\n\n externe.\n\n Procedure standard non intrusive - PROC-SAN-01\n\n 1. Enregistrer date/heure, identifiant de baie, composant et code alarme. 2. Verifier le perimetre affecte\n\n (hotes, volumes, groupe). 3. Rechercher les passages et figures pertinents dans le manuel. 4. Consulter les\n\n evenements et interventions anterieures. 5. Preciser preuves, limites et hypotheses. 6. Preparer un\n\n brouillon de ticket. 7. Attendre l’approbation explicite pour la creation effective du ticket.\n\n Arret et escalade\n\n En cas de perte d’acces aux volumes, risque sur l’integrite des donnees, alertes contradictoires ou\n\n information insuffisante, arreter le diagnostic automatise et escalader vers un technicien habilite. Ne pas\n\n executer de commande destructive, de failover ou de reconfiguration depuis l’assistant.\n\n\n   Operation                                                  Autorisation dans MaintiDoc\n\n\n   Lire documentation et journaux autorises                   Oui, avec controle d’acces\n\n\n   Preparer un ticket                                          Oui, sous forme de brouillon\n\n\n   Creer un ticket                                      Seulement apres approbation humaine\n\n\n   Modifier zoning / supprimer LUN / failover              Non : hors perimetre\n\n\n\n\n\nSAN-MAN-001  | MaintiDoc  | Manuel pedagogique fictif                                                             Page 6"
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "document_sha256": "caec09fa5cadf68924ac1c75194498aaa9329d8c5e5cf1071939b3b50002b3f9",
+    "page": 7,
+    "element_id": "page_07_text",
+    "modality": "text",
+    "text": "6. Historique fictif d interventions\n\n\n   Ticket           Date                Actif                 Observation / suite\n\n\n   INC-104         2026-09-18       Fabric A               Perte temporaire de chemin HBA1 ; surveillance\n\n\n   INC-117         2026-10-02       Disque B03            Pre-alerte ; examen du groupe de protection\n\n\n   INC-125         2026-10-20      Volume VOL-DB       Capacite a 88 % ; analyse de tendance\n\n\n   INC-130         2026-10-25       Controleur B         Evenement non reproductible ; suivi\n\n\n\n Exemple de ticket a preparer\n\n\n  Champ                    Exemple\n\n\n   Equipment ID               SAN-LAB-2000\n\n\n   Titre                            Alerte AL-01 sur fabric A\n\n\n   Description                Chemin FC degrade sur HBA1, recurrence a verifier\n\n\n   Preuves                    ALARM-TAB-01, FIG-02, INC-104\n\n\n   Statut                           Brouillon - approbation requise\n\n\n 7. Jeu de questions pour le RAG multimodal\n\n\n   ID        Question                                                                   Source attendue\n\n\n  Q01      Quel est le role des deux fabrics ?                                                   FIG-01, FIG-02\n\n\n  Q02     Ou intervient le zoning ?                                                         FIG-02\n\n\n  Q03     Que signifie MPIO ?                                                               Section 2\n\n\n  Q04      Le disque B03 a-t-il un antecedent ?                                               INC-117, FIG-03\n\n\n  Q05      Quel est le sens de AL-01 ?                                                ALARM-TAB-01\n\n\n  Q06      Le voyant orange permet-il un diagnostic certain ?                                  Section 4\n\n\n  Q07     Que faut-il verifier avant un ticket ?                                         PROC-SAN-01\n\n\n  Q08      Qui doit approuver la creation du ticket ?                                           Section 5\n\n\n  Q09      Quelle procedure correspond a une perte de chemin ?                            DIAG-FC-01\n\n\n  Q10      Peut-on declencher un failover depuis MaintiDoc ?                                  Section 5\n\n\n  Q11      Quelle alerte touche la capacite ?                                              AL-04\n\n\n  Q12      Quels elements retrouve-t-on dans le ticket exemple ?                              Section 6\n\n\n\n\n\nSAN-MAN-001  | MaintiDoc  | Manuel pedagogique fictif                                                             Page 7"
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "document_sha256": "caec09fa5cadf68924ac1c75194498aaa9329d8c5e5cf1071939b3b50002b3f9",
+    "page": 8,
+    "element_id": "page_08_text",
+    "modality": "text",
+    "text": "SAN-MAN-001  | MaintiDoc  | Manuel pedagogique fictif                                                             Page 8"
+  },
+  {
+    "document_id": "SAN-MAN-001",
+    "document_sha256": "caec09fa5cadf68924ac1c75194498aaa9329d8c5e5cf1071939b3b50002b3f9",
+    "page": 9,
+    "element_id": "page_09_text",
+    "modality": "text",
+    "text": "8. Annexes - index des elements\n\n\n   Reference                     Type             Contenu\n\n\n   FIG-01                      Schema            Architecture logique\n\n\n   FIG-02                      Schema            Fibre Channel et MPIO\n\n\n   FIG-03                      Schema            Controleurs et disques\n\n\n   FIG-04                      Schema           Voyants du simulateur\n\n\n   FIG-05                      Schema           Workflow maintenance\n\n\n  ALARM-TAB-01                  Tableau          Codes d alarmes\n\n\n   DIAG-FC-01                      Procedure          Perte de chemin FC\n\n\n   DISC-02                         Procedure           Pre-alerte disque\n\n\n  PROC-SAN-01                    Procedure         Gestion documentaire d alerte\n\n\n   INC-104 a INC-130                 Historique          Interventions fictives\n\n\n Conseils d'indexation - Projet integrateur\n\n Pour chaque schema, conserver : document_id=SAN-MAN-001, revision=1.0, figure_id, numero de page,\n\n description, emplacement de l’image originale et groupes d’acces. Indexer les tableaux ligne par ligne et\n\n conserver une representation structuree. Verifier que les citations soutiennent les reponses generees.\n\n Limites du corpus\n\n Tous les identifiants, alarmes, composants et incidents de ce manuel sont fictifs. La symbolique ne\n\n correspond a aucun modele constructeur garanti. Les capacites de diagnostic du RAG et du VLM doivent\n\n etre evaluees sur les reponses de reference, sans assimiler similarite visuelle et certitude technique.\n\n\n\n\n\nSAN-MAN-001  | MaintiDoc  | Manuel pedagogique fictif                                                             Page 9"
+  }
+]

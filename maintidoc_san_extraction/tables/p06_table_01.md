@@ -1,0 +1,9 @@
+| col_1                                | col_2                            |
+|:-------------------------------------|:---------------------------------|
+| Operation                            | AutorisationdansMaintiDoc        |
+| Liredocumentationetjournauxautorises | Oui aveccontroled’acces          |
+|                                      | ,                                |
+| Preparerunticket                     | Oui sousformedebrouillon         |
+|                                      | ,                                |
+| Creerunticket                        | Seulementapresapprobationhumaine |
+| Modifierzoning/supprimerLUN/failover | Non:horsperimetre                |

@@ -1,0 +1,48 @@
+5. Workflow de maintenance et securite
+
+
+
+
+
+ FIG-05 : circuit documentaire de traitement d’une alerte. La validation humaine precede toute action
+
+ externe.
+
+ Procedure standard non intrusive - PROC-SAN-01
+
+ 1. Enregistrer date/heure, identifiant de baie, composant et code alarme. 2. Verifier le perimetre affecte
+
+ (hotes, volumes, groupe). 3. Rechercher les passages et figures pertinents dans le manuel. 4. Consulter les
+
+ evenements et interventions anterieures. 5. Preciser preuves, limites et hypotheses. 6. Preparer un
+
+ brouillon de ticket. 7. Attendre l’approbation explicite pour la creation effective du ticket.
+
+ Arret et escalade
+
+ En cas de perte d’acces aux volumes, risque sur l’integrite des donnees, alertes contradictoires ou
+
+ information insuffisante, arreter le diagnostic automatise et escalader vers un technicien habilite. Ne pas
+
+ executer de commande destructive, de failover ou de reconfiguration depuis l’assistant.
+
+
+   Operation                                                  Autorisation dans MaintiDoc
+
+
+   Lire documentation et journaux autorises                   Oui, avec controle d’acces
+
+
+   Preparer un ticket                                          Oui, sous forme de brouillon
+
+
+   Creer un ticket                                      Seulement apres approbation humaine
+
+
+   Modifier zoning / supprimer LUN / failover              Non : hors perimetre
+
+
+
+
+
+SAN-MAN-001  | MaintiDoc  | Manuel pedagogique fictif                                                             Page 6

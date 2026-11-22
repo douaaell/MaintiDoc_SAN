@@ -1,0 +1,31 @@
+MAINTiDOC  / SAN-LAB 2000
+
+MANUEL DE MAINTENANCE
+D·UN SYSTEME SAN
+PROJET INTEGRATEUR
+
+Intelligence artificielle generative multimodale et agentique
+
+
+
+
+
+Architecture SAN  | Fibre Channel  | Controleurs et disques
+Alarmes  | Diagnostic documentaire  | Validation humaine
+
+
+
+Document pedagogique fictif - SAN-LAB 2000
+5 schemas integres, tableaux, procedures et cas d·interventions
+Corpus de demonstration pour le Projet integrateur MaintiDoc
+
+
+
+
+  AVERTISSEMENT
+
+  Manuel fictif : ne remplace pas la notice officielle du constructeur.
+
+
+
+SAN-MAN-001   |  Revision 1.1   |  Octobre 2026

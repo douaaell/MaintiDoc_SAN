@@ -1,0 +1,44 @@
+3. Controleurs, disques et capacite
+
+
+
+
+
+ FIG-03 : vue didactique des chemins entre controleurs et enceinte disques. Aucun type de protection RAID
+
+ n’est prescrit.
+
+
+   Element              Symptome possible              Verification documentaire
+
+
+   Controleur A/B          Degrade ou indisponible        Statut, journaux, etat HA
+
+
+   Enceinte                 Perte de liaison                 Inventaire et alertes de connexion
+
+
+   Disque Bxx              Defaut ou pre-alerte           ID exact, groupe, reconstruction
+
+
+  Volume LUN              Saturation / latence            Capacite, IOPS, latence, alertes
+
+
+
+ Cas DISC-02 : disque en pre-alerte
+
+ Consulter l’identifiant physique et l’horodatage de l’alerte. Examiner l’etat du groupe de protection et la
+
+ presence d’une reconstruction en cours. Preparer un ticket avec preuves, sans lancer automatiquement de
+
+ remplacement ni de reconstruction.
+
+ Attention : une LED disque seule n’identifie pas le risque : les significations dependent du modele et du
+
+ firmware.
+
+
+
+
+
+SAN-MAN-001  | MaintiDoc  | Manuel pedagogique fictif                                                             Page 4
