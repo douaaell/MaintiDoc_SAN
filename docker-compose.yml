@@ -1,0 +1,10 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: maintidoc-qdrant
+    ports:
+      - "6333:6333"   # API REST + tableau de bord
+      - "6334:6334"   # gRPC
+    volumes:
+      - ./qdrant_storage:/qdrant/storage   # données conservées après un redémarrage
+    restart: unless-stopped
