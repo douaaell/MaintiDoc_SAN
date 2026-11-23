@@ -102,6 +102,28 @@ def get_clip():
     return SentenceTransformer('sentence-transformers/clip-ViT-B-32', device='cpu')
 
 
+@st.cache_resource(show_spinner='Chargement du Reranker…')
+def get_reranker():
+    from sentence_transformers import CrossEncoder
+    return CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
+
+
+def rerank_evidence(query: str, evidence: list[dict], reranker, top_k: int = 4) -> list[dict]:
+    """Reclasse sémantiquement les extraits textuels avec le Reranker (Étape 2)."""
+    text_items = [e for e in evidence if e['type'] != 'image']
+    image_items = [e for e in evidence if e['type'] == 'image']
+    if not text_items or reranker is None:
+        return evidence
+
+    pairs = [[query, e['content']] for e in text_items]
+    scores = reranker.predict(pairs)
+    for item, s in zip(text_items, scores):
+        item['rerank_score'] = float(s)
+
+    ranked_texts = sorted(text_items, key=lambda x: x.get('rerank_score', -999), reverse=True)
+    return ranked_texts[:top_k] + image_items
+
+
 def fuse_rrf(text_hits, visual_hits, k=60):
     # Fusion au niveau des pages, utile pour réunir figures et explications proches.
     totals = {}
@@ -179,6 +201,7 @@ with st.sidebar:
     max_images = st.slider('Images transmises au VLM', 0, 2, 1)
     top_pages = st.slider('Pages retenues après fusion', 1, 5, 3)
     st.caption('Embeddings calculés sur CPU pour limiter la pression mémoire sur le GPU.')
+    use_reranker = st.checkbox('Activer le Reranker sémantique', value=True)
     if st.button('Tester Qdrant'):
         try:
             st.success('Qdrant accessible')
@@ -238,8 +261,12 @@ if st.button('Indexer et rechercher', type='primary'):
         v_hits = store.search_visual(client, clip, visual_query, document=pdf_name) if images else []
         merged = fuse_rrf(t_hits, v_hits)[:top_pages]
         evidence, selected_images = build_context(merged, texts, tables, images, max_images=max_images)
+        if use_reranker:
+            with st.spinner('Reranking sémantique des preuves…'):
+                reranker = get_reranker()
+                evidence = rerank_evidence(question, evidence, reranker, top_k=4)
         st.session_state['search'] = {'hash':pdf_hash, 'question':question, 'merged':merged,
-                                     'evidence':evidence, 'images':selected_images}
+                                     'evidence':evidence, 'images':selected_images, 'reranked': use_reranker}
     except Exception as ex:
         st.error(f'Erreur d’indexation / recherche : {type(ex).__name__}: {ex}')
 
@@ -247,9 +274,11 @@ state = st.session_state.get('search')
 if state and state['hash'] == pdf_hash:
     st.subheader('Pages récupérées (RRF)')
     st.dataframe(pd.DataFrame(state['merged']), hide_index=True)
-    with st.expander('Preuves retenues', expanded=True):
+    titre_preuves = 'Preuves retenues (reclassées par Reranker)' if state.get('reranked') else 'Preuves retenues'
+    with st.expander(titre_preuves, expanded=True):
         for e in state['evidence']:
-            st.markdown(f"**{e['id']} — page {e['page']} — {e['type']}**")
+            score_badge = f" · Score Reranker: `{e['rerank_score']:.4f}`" if 'rerank_score' in e else ""
+            st.markdown(f"**{e['id']} — page {e['page']} — {e['type']}**{score_badge}")
             if e['type'] != 'image':
                 st.code(e['content'][:1100], language=None)
         for item in state['images']:
