@@ -1,0 +1,7 @@
+[server]
+# Taille max des fichiers PDF uploadables (en Mo)
+maxUploadSize = 200
+
+[browser]
+# Ne pas envoyer de statistiques d'usage à Streamlit
+gatherUsageStats = false
