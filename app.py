@@ -318,6 +318,9 @@ if btn_agent_direct:
     if prior and prior['hash'] == pdf_hash:
         # Réutilise les preuves déjà récupérées : rapide, pas de rechargement des modèles lourds
         try:
+            import importlib
+            import agent
+            importlib.reload(agent)
             from agent import maintidoc_agent
             with st.spinner("Exécution du cycle agentique LangGraph (Évaluation ➜ Décision ➜ Génération)..."):
                 agent_input = {
@@ -325,6 +328,7 @@ if btn_agent_direct:
                     "visual_query": visual_query,
                     "document_name": pdf_name,
                     "model_name": model_name,
+                    "num_ctx": ctx,
                     "texts": texts,
                     "tables": tables,
                     "images": images,
@@ -392,11 +396,7 @@ if state and state['hash'] == pdf_hash:
         for item in state['images']:
             st.image(item['bytes'], caption=f"{item['id']} · page {item['page']}", width=620)
 
-    col_sub1, col_sub2 = st.columns(2)
-    with col_sub1:
-        run_direct = st.button('⚡ Génération directe (Pipeline simple)', use_container_width=True)
-    with col_sub2:
-        run_agent_with_evidence = st.button('🤖 Exécuter LangGraph sur ces preuves', type='primary', use_container_width=True)
+    run_direct = st.button('⚡ Génération directe (Pipeline simple)', use_container_width=True)
 
     if run_direct:
         try:
@@ -426,30 +426,6 @@ if state and state['hash'] == pdf_hash:
             st.download_button('Télécharger la réponse brute JSON / texte', raw, 'maintidoc_reponse.txt')
         except Exception as ex:
             st.error(f'Erreur Ollama : {type(ex).__name__}: {ex}')
-
-    if run_agent_with_evidence:
-        try:
-            from agent import maintidoc_agent
-            with st.spinner("Exécution du cycle agentique LangGraph sur les preuves..."):
-                agent_input = {
-                    "question": state["question"],
-                    "visual_query": visual_query,
-                    "document_name": pdf_name,
-                    "model_name": model_name,
-                    "texts": texts,
-                    "tables": tables,
-                    "images": images,
-                    "retrieved_evidence": state["evidence"],
-                    "selected_images": state["images"],
-                    "evidence_status": "insufficient",
-                    "max_rerank_score": -999.0,
-                    "final_response": {},
-                    "loop_count": 0,
-                }
-                agent_res = maintidoc_agent.invoke(agent_input)
-                render_agent_result(agent_res, state["evidence"])
-        except Exception as ex:
-            st.error(f"Erreur lors de l'exécution de l'agent LangGraph : {type(ex).__name__}: {ex}")
 
 st.divider()
 st.caption('Prototype didactique : sans authentification, sans MCP, sans ticket de maintenance. Pour production : permissions, stockage contrôlé, validation des preuves et protections complémentaires obligatoires.')

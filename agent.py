@@ -127,10 +127,12 @@ def validate_citations(response: dict, evidence: list[dict]):
 # -----------------------------------------------------------------------------
 # 1. État partagé de l'agent (AgentState)
 # -----------------------------------------------------------------------------
-class AgentState(TypedDict):
+class AgentState(TypedDict, total=False):
     question: str
     visual_query: str
     document_name: str
+    model_name: Optional[str]
+    num_ctx: Optional[int]
     texts: list
     tables: list
     images: list
@@ -237,17 +239,37 @@ Cite uniquement les IDs autorisés et leurs pages exactes. Aucune citation inven
         f"IDs autorisés : {json.dumps(allowed, ensure_ascii=False)}"
     )
 
+    # Compression des images avant envoi au VLM pour un traitement rapide sur CPU
     message = {"role": "user", "content": user_content}
     if images:
-        message["images"] = [im["bytes"] for im in images]
+        import io as _io
+        from PIL import Image as _Img
+        compressed = []
+        for im in images:
+            try:
+                pil = _Img.open(_io.BytesIO(im["bytes"])).convert("RGB")
+                pil.thumbnail((320, 320), _Img.Resampling.LANCZOS)
+                buf = _io.BytesIO()
+                pil.save(buf, format="JPEG", quality=70, optimize=True)
+                compressed.append(buf.getvalue())
+            except Exception:
+                compressed.append(im["bytes"])
+        message["images"] = compressed
+        print(f" [Agent] {len(compressed)} image(s) compressée(s) transmise(s) à Qwen-VL.")
 
-    client = Client(host="http://127.0.0.1:11434", timeout=240)
+    model_to_use = state.get("model_name") or "qwen2.5vl:7b"
+    num_ctx = state.get("num_ctx") or 4096
+    # Si le curseur dans l'interface est réglé trop bas pour contenir le prompt RAG (~2400 tokens),
+    # on ajuste automatiquement au seuil minimum pour éviter l'erreur 400 d'Ollama.
+    if num_ctx < 3072:
+        num_ctx = 4096
+    client = Client(host="http://127.0.0.1:11434", timeout=600.0)
     result = client.chat(
-        model="qwen2.5vl:7b",
+        model=model_to_use,
         messages=[{"role": "system", "content": instructions}, message],
         format="json",
-        options={"num_ctx": 4096, "num_predict": 700, "temperature": 0},
-        keep_alive="0s",
+        options={"num_ctx": num_ctx, "num_predict": 350, "temperature": 0},
+        keep_alive="10m",
     )
 
     try:
